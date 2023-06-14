@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - 13
 
+branches:
+  only:
+    - master
+
 services:
   - docker
 
@@ -13,6 +17,7 @@ install:
 before_script:
   - echo "no tests"
 
+## TODO: programatically increment the docker image version
 script:
   - docker --version # print the version for logging
   - docker build -t reverseproxy ./udagram-reverseproxy

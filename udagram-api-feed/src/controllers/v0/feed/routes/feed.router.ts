@@ -53,7 +53,6 @@ router.get(
   async (req: Request, res: Response) => {
     const { fileName } = req.params;
     const url = AWS.getPutSignedUrl(fileName);
-    console.log("!!", url);
     res.status(201).send({ url: url });
   }
 );
